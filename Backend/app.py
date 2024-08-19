@@ -4,6 +4,7 @@ from document_loader import load_and_process_document
 from vector_store import setup_vector_store
 from qa_system import setup_qa_system
 from espn_api import get_players, get_player_stats
+from waitlist_emails import store_email_in_waitlist
 import os
 from dotenv import load_dotenv
 
@@ -37,6 +38,17 @@ def query():
     result = qa_system.invoke(message)
     response = result['result']
     return jsonify({'response': response})
+
+
+@app.route('/waitlist', methods=['POST'])
+def waitlist():
+    data = request.json
+    email = data.get('email')
+    if not email:
+        return jsonify({'error': 'Email is required'}), 400
+
+    result = store_email_in_waitlist(email)
+    return jsonify(result)
 
 if __name__ == '__main__':
     app.run(debug=True)
