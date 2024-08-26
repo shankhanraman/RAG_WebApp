@@ -211,39 +211,7 @@
         <script src="assets/js/breakpoints.min.js"></script>
         <script src="assets/js/util.js"></script>
         <script src="assets/js/main.js"></script>
-        <script>
-            document.getElementById('chat-form').addEventListener('submit', function(event) {
-                event.preventDefault();
-                const input = document.getElementById('chat-input');
-                const message = input.value.trim();
-                if (message) {
-                    displayMessage('You', message);
-                    input.value = '';
-                    // Send the message to the backend API and get a response
-                    fetch('/api/query', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify({ message: message })
-                    })
-                    .then(response => response.json())
-                    .then(data => {
-                        displayMessage('AI', data.response);
-                    })
-                    .catch(error => {
-                        console.error('Error:', error);
-                    });
-                }
-            });
-
-            function displayMessage(sender, message) {
-                const chatContainer = document.getElementById('chat-container');
-                const messageElement = document.createElement('div');
-                messageElement.innerHTML = `<strong>${sender}:</strong> ${message}`;
-                chatContainer.appendChild(messageElement);
-                chatContainer.scrollTop = chatContainer.scrollHeight;
-            }
-        </script>
+        <script src="chat.js"></script>
+        <script src="waitlist.js"></script>
     </body>
 </html>
