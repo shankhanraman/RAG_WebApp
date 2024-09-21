@@ -5,3 +5,9 @@ pymongo
 langchain_community
 fastembed
 python-dotenv
+Flask==2.1.2
+Flask-Cors==3.0.10
+pymongo==3.12.1
+requests==2.26.0
+python-dotenv==0.19.0
+PyPDF2==3.0.0
