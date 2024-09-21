@@ -30,7 +30,7 @@ Make sure you have the following installed:
    ```
 2. Navigate to the project directory:
    ```bash
-   cd nfl-season-analysis
+   cd Backend
    ```
 3. Install the required Python packages:
    ```bash
