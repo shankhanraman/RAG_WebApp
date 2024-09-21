@@ -26,7 +26,7 @@ Make sure you have the following installed:
 ### Installation
 1. Clone the repository:
    ```bash
-   git clone [repository_url]
+   git clone [[repository_url]](https://github.com/shankhanraman/RAG_WebApp.git)
    ```
 2. Navigate to the project directory:
    ```bash
